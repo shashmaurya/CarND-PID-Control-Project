@@ -12,6 +12,7 @@ The points addressed below are towards fulfilment of the project requirements as
 
 
 
+
 ## Compilation
 ### Code Compiles Correctly
 
@@ -70,7 +71,6 @@ The coefficients of these individual components are tuned to represent their wei
 
 
 
-
 ### Hyperparameter Tuning
 
 Tuning was the most challenging and fun part of this project. It also happens to be the most critical one.
@@ -79,15 +79,15 @@ In this particular case the tuning was done manually. Initial attempts to employ
 However, the process used for manual tuning was somwhat like the twiddle logic, albeit more intuition based than iterative. 
 Starting with the intial set of `p = [1, 1, 1]` values were scaled up or down using the logic described below. The `dp` values were subjective, determined by the vehicle behavior. Instead of total error, the response was used as a 'metric' of performance.
 
-    * Run the vehicle with the current set of `p`, and check the response. Monitor the behavior, specifically car oscillation left to right, steering oscillation, and vehicle's sudden jerks
+* Run the vehicle with the current set of `p`, and check the response. Monitor the behavior, specifically car oscillation left to right, steering oscillation, and vehicle's sudden jerks
 
-    * Increment one of the `Kp`, `Ki`, or `Kd` values
-    * If the response deteriorates, decrement the initial value and try again. Continue till there is a observable change in behavior.
-    * When the response improves, go to next component. And repeat the process.
+* Increment one of the `Kp`, `Ki`, or `Kd` values
+* If the response deteriorates, decrement the initial value and try again. Continue till there is a observable change in behavior.
+* When the response improves, go to next component. And repeat the process.
 
-    * When the vehicle behavior is close to the desired one, reduce the quantum of change.
+* When the vehicle behavior is close to the desired one, reduce the quantum of change.
 
-    * Iterate starting with some different values to avoid a 'local minima'.
+* Iterate starting with some different values to avoid a 'local minima'.
 
 
 While more time consuming, the manual tuning process helped in better practical understanding of how the individul components affect the response. Some of it is reflected in the previous section.
@@ -101,11 +101,13 @@ If the `Kd` or `Kp` values were somewhat higher, the turn was navigated sucessfu
 This was resolved when the final set of correct values was reached. Strong enough proportional and derivative control to maneuver turns, but not dangerously oscillate when exiting the turns.
 
 Left Turn
+
 ![alt text][image2]
 
 
 
 Right Turn
+
 ![alt text][image3]
 
 
